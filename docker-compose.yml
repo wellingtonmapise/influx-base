@@ -1,0 +1,25 @@
+version: "2.4"
+
+services:
+  influx_app:
+    build:
+      context: .
+      args:
+        - NODE_ENV=development
+    environment:
+      - NODE_ENV=development
+    tty: true
+    ports:
+      - "19006:19006"
+      - "19001:19001"
+      - "19002:19002"
+    volumes:
+      - ./influx_app:/opt/influx_app/app:delegated
+      - ./influx_app/package.json:/opt/influx_app/package.json
+      - ./influx_app/package-lock.json:/opt/influx_app/package-lock.json
+      - notused:/opt/influx_app/app/node_modules
+    healthcheck:
+      disable: true
+
+volumes:
+  notused:
