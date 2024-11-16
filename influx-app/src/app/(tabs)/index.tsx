@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import PatientList from '../../components/PatientList';
+import {useQuery} from '@tanstack/react-query'
 
 export default function HomeScreen() {
+
   return (
     <View style={styles.container}>
       <PatientList />
