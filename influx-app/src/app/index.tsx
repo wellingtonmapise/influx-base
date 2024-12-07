@@ -6,14 +6,18 @@ import { useAuth } from "@/providers/AuthProvider";
 import { supabase } from "@/lib/supabase";
 
 const index = () => {
-  const { session, loading, isDoctor: isAdmin } = useAuth();
+  const { session, loading, isDoctor: isDoctor } = useAuth();
 
   // if (loading) {
   //   return <ActivityIndicator />;
   // }
 
-  // if (!isDoctor) {
-  //   return <Redirect href={'/patientView'} />;
+  if (!isDoctor) {
+    return <Redirect href={'/(patientView)'} />;
+  }
+  // else{
+  //   return <Redirect href={'/(doctorView)'} />;
+
   // }
 
   return (
@@ -31,7 +35,7 @@ const index = () => {
         <Button text="(for devs) doctor view" />
       </Link>
 
-      {/* <Button onPress={() => supabase.auth.signOut()} text="Sign out" /> */}
+      <Button onPress={() => supabase.auth.signOut()} text="Sign out" />
     </View>
   );
 };

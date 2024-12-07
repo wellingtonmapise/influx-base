@@ -1,6 +1,8 @@
 import React from 'react';
 import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity, Linking } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { supabase } from "@/lib/supabase";
+import Button from "@/components/Button";
 
 const ProfileScreen = () => {
   return (
@@ -36,6 +38,10 @@ const ProfileScreen = () => {
           <Text style={styles.buttonText}>Schedule Appointment</Text>
         </TouchableOpacity>
       </View>
+
+      {/* Sign Out Button */}
+      <Button onPress={() => supabase.auth.signOut()} text="Sign out" />
+
 
       {/* Social Media Links */}
       <View style={[styles.section, styles.socialIcons]}>
