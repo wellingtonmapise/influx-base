@@ -8,9 +8,9 @@ import { supabase } from "@/lib/supabase";
 const index = () => {
   const { session, loading, isDoctor: isAdmin } = useAuth();
 
-  if (loading) {
-    return <ActivityIndicator />;
-  }
+  // if (loading) {
+  //   return <ActivityIndicator />;
+  // }
 
   // if (!isDoctor) {
   //   return <Redirect href={'/patientView'} />;
@@ -18,16 +18,16 @@ const index = () => {
 
   return (
     <View style={{ flex: 1, justifyContent: "center", padding: 10 }}>
-      <Link href={"/auth/sign-up"} asChild>
+      <Link href={"/sign-in"} asChild>
         <Button text="Create New Account" />
       </Link>
-      <Link href={"/auth/sign-in"} asChild>
+      <Link href={"/sign-in"} asChild>
         <Button text="Log In" />
       </Link>
-      <Link href={"/patientView"} asChild>
+      <Link href={"/(patientView)"} asChild>
         <Button text="(for devs) patient view" />
       </Link>
-      <Link href={"/doctorView"} asChild>
+      <Link href={"/(doctorView)"} asChild>
         <Button text="(for devs) doctor view" />
       </Link>
 
