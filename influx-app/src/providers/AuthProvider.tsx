@@ -32,9 +32,9 @@ export default function AuthProvider({ children }: PropsWithChildren) {
       const {
         data: { session },
       } = await supabase.auth.getSession();
-
+      console.log("FETCH session", fetchSession)
       setSession(session);
-
+      console.log("session", session)
       if (session) {
         // fetch profile
         const { data } = await supabase
@@ -44,7 +44,7 @@ export default function AuthProvider({ children }: PropsWithChildren) {
           .single();
         setProfile(data || null);
       }
-
+      console.log("profile", profile)
       setLoading(false);
     };
 

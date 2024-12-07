@@ -6,11 +6,11 @@ import { useAuth } from "@/providers/AuthProvider";
 import { supabase } from "@/lib/supabase";
 
 const index = () => {
-  // const { session, loading, isDoctor: isAdmin } = useAuth();
+  const { session, loading, isDoctor: isAdmin } = useAuth();
 
-  // if (loading) {
-  //   return <ActivityIndicator />;
-  // }
+  if (loading) {
+    return <ActivityIndicator />;
+  }
 
   // if (!isDoctor) {
   //   return <Redirect href={'/patientView'} />;
