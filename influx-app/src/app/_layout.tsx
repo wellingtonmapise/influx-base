@@ -55,14 +55,6 @@ function RootLayoutNav() {
         <AuthProvider>
                 <Stack>
                   <Stack.Screen
-                    name="(doctorView)"
-                    options={{ headerShown: false }}
-                  />
-                  <Stack.Screen
-                    name="(patientView)"
-                    options={{ headerShown: false }}
-                  />
-                  <Stack.Screen
                     name="(auth)"
                     options={{ headerShown: false }}
                   />
