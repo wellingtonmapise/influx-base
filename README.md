@@ -1,6 +1,4 @@
-# Influx App--Monitor and Connect to Influx Device!
 
-Link to docs: https://docs.google.com/document/d/1rXjL4c-eujZ_A5XL2QreLCxN8dYppYTXUe0z14ZnhPI/edit?tab=t.0
 
 ## To run:
 1. Copy repo from github as usual–use personal github, not Cornell (to avoid Docker restrictions)
